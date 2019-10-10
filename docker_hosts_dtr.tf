@@ -3,7 +3,7 @@ variable "docker_host_dtr_type" {
 }
 
 resource "aws_instance" "docker-dtr" {
-  count                  = 1
+  count                  = "1"
   ami                    = var.docker_host_ami
   instance_type          = var.docker_host_dtr_type
   subnet_id              = aws_subnet.core.id

@@ -55,7 +55,7 @@ resource "aws_instance" "bootstrapper" {
       "sudo yum -y install docker-ee",
       "sudo systemctl enable docker",
       "sudo systemctl start docker",
-      "sudo docker container run --rm -it --name ucp -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/docker_subscription.lic:/config/docker_subscription.lic docker/ucp:3.0.7 install --host-address ${self.private_ip} --admin-username ${var.admin_username} --admin-password ${var.admin_password} --force-minimums",
+      "sudo docker container run --rm -it --name ucp -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/docker_subscription.lic:/config/docker_subscription.lic docker/ucp:3.2.1 install --host-address ${self.private_ip} --admin-username ${var.admin_username} --admin-password ${var.admin_password} --force-minimums",
     ]
   }
 }
